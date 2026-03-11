@@ -144,8 +144,26 @@ nav .container {
 .hero-bio {
   color: var(--text-secondary);
   max-width: 520px;
-  margin: 0 auto 2rem;
+  margin: 0 auto 1.25rem;
   font-size: 1rem;
+}
+
+.hero-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1.75rem;
+}
+
+.hero-skill-tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+  border: 1px solid rgba(74, 158, 255, 0.2);
+  border-radius: 4px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.82rem;
+  font-weight: 600;
 }
 
 .hero-links {
