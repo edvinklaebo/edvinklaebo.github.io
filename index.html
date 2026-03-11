@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Edvin Klæbo — Unity / C# Gameplay Programmer. Portfolio showcasing Three Choices, a tactical turn-based RPG built in Unity." />
+  <title>Edvin Klæbo — Unity Gameplay Programmer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav aria-label="Site navigation">
+    <div class="container">
+      <a href="#hero" class="nav-logo">Edvin Klæbo</a>
+      <ul class="nav-links">
+        <li><a href="#game-showcase">Game</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#technical">Technical</a></li>
+        <li><a href="#links">Links</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero" aria-labelledby="hero-name">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-avatar" aria-hidden="true">EK</div>
+        <h1 class="hero-name" id="hero-name">Edvin Klæbo</h1>
+        <p class="hero-title">Unity / C# Gameplay Programmer</p>
+        <p class="hero-bio">
+          I build gameplay systems for Unity — combat pipelines, AI behaviours,
+          and data-driven design. Currently developing <em>Three Choices</em>,
+          a tactical turn-based RPG.
+        </p>
+        <div class="hero-links">
+          <a href="https://github.com/edvinklaebo" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+            <!-- GitHub icon -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            GitHub Profile
+          </a>
+          <a href="#game-showcase" class="btn btn-secondary">
+            View Project
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Game Showcase Section -->
+  <section id="game-showcase" aria-labelledby="game-title">
+    <div class="container">
+
+      <div class="game-header">
+        <div class="game-title-group">
+          <p class="section-label">Featured Project</p>
+          <h2 class="game-main-title" id="game-title">Three Choices</h2>
+          <span class="game-status-badge">Work in Progress</span>
+        </div>
+      </div>
+
+      <div class="game-layout">
+
+        <!-- Main: Video + Description -->
+        <div>
+          <!-- Gameplay Video -->
+          <div class="video-wrapper" role="figure" aria-label="Three Choices gameplay video">
+            <!-- Replace the src with your actual YouTube/Vimeo embed URL when available -->
+            <div class="video-placeholder" aria-label="Gameplay video coming soon">
+              <svg width="56" height="56" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z"/>
+              </svg>
+              <span>Gameplay video coming soon</span>
+            </div>
+          </div>
+
+          <!-- Game Description (below video on desktop) -->
+          <div style="margin-top: 1.5rem;">
+            <p class="section-label">About the Game</p>
+            <p style="color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+              <strong style="color: var(--text-primary);">Three Choices</strong> is a tactical turn-based RPG
+              built entirely in Unity. Every encounter challenges the player with meaningful decisions —
+              each turn offers exactly three actions, each with cascading consequences. The game features
+              a modular, data-driven architecture that makes it easy to extend enemy types, spells,
+              and loot without touching game logic code.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem; margin-top: 0.75rem;">
+              Enemies are defined through scriptable object profiles, a layered status effect system
+              handles buffs and debuffs at runtime, and combat events flow through a decoupled pipeline
+              that keeps the UI, audio, and game logic entirely independent.
+            </p>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside aria-label="Game details">
+
+          <div class="info-card" style="margin-bottom: 1.25rem;">
+            <p class="info-card-title">Engine &amp; Language</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Unity 2022 LTS</span>
+              <span class="tech-tag">C#</span>
+              <span class="tech-tag">ScriptableObjects</span>
+              <span class="tech-tag">URP</span>
+            </div>
+          </div>
+
+          <div class="info-card" style="margin-bottom: 1.25rem;">
+            <p class="info-card-title">Genre &amp; Style</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Turn-Based RPG</span>
+              <span class="tech-tag">Tactical</span>
+              <span class="tech-tag">Single-player</span>
+            </div>
+          </div>
+
+          <div class="info-card" style="margin-bottom: 1.25rem;">
+            <p class="info-card-title">Systems Implemented</p>
+            <ul class="systems-list" aria-label="Implemented systems">
+              <li>Modular enemy definitions</li>
+              <li>Status effect system</li>
+              <li>Weighted loot tables</li>
+              <li>Event-driven combat pipeline</li>
+              <li>Turn order manager</li>
+              <li>Skill &amp; ability framework</li>
+              <li>Save / load system</li>
+            </ul>
+          </div>
+
+          <div class="game-links">
+            <a href="https://github.com/edvinklaebo/three-choices" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              Source Code
+            </a>
+            <span class="btn btn-disabled" title="Playable build not yet available">
+              🎮 Play Demo
+            </span>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Screenshot / GIF Gallery -->
+  <section id="gallery" aria-labelledby="gallery-heading">
+    <div class="container">
+      <p class="section-label">Visual Showcase</p>
+      <h2 class="section-title" id="gallery-heading">Screenshots &amp; Clips</h2>
+      <p class="section-subtitle">
+        In-engine captures of the combat system, UI, and world design.
+        Screenshots will be added as development progresses.
+      </p>
+
+      <div class="gallery-grid" role="list" aria-label="Game screenshots">
+
+        <figure class="gallery-item" role="listitem" aria-label="Combat system overview">
+          <div class="gallery-placeholder" aria-hidden="true">
+            <span class="gallery-placeholder-icon">⚔️</span>
+            <span>Combat System</span>
+          </div>
+          <figcaption class="visually-hidden">Combat system screenshot — coming soon</figcaption>
+        </figure>
+
+        <figure class="gallery-item" role="listitem" aria-label="Enemy AI behaviour">
+          <div class="gallery-placeholder" aria-hidden="true">
+            <span class="gallery-placeholder-icon">🤖</span>
+            <span>Enemy AI</span>
+          </div>
+          <figcaption class="visually-hidden">Enemy AI screenshot — coming soon</figcaption>
+        </figure>
+
+        <figure class="gallery-item" role="listitem" aria-label="Status effects UI">
+          <div class="gallery-placeholder" aria-hidden="true">
+            <span class="gallery-placeholder-icon">✨</span>
+            <span>Status Effects</span>
+          </div>
+          <figcaption class="visually-hidden">Status effects UI screenshot — coming soon</figcaption>
+        </figure>
+
+        <figure class="gallery-item" role="listitem" aria-label="Loot system">
+          <div class="gallery-placeholder" aria-hidden="true">
+            <span class="gallery-placeholder-icon">🎁</span>
+            <span>Loot System</span>
+          </div>
+          <figcaption class="visually-hidden">Loot system screenshot — coming soon</figcaption>
+        </figure>
+
+        <figure class="gallery-item" role="listitem" aria-label="World map / exploration">
+          <div class="gallery-placeholder" aria-hidden="true">
+            <span class="gallery-placeholder-icon">🗺️</span>
+            <span>World Map</span>
+          </div>
+          <figcaption class="visually-hidden">World map screenshot — coming soon</figcaption>
+        </figure>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Breakdown Section -->
+  <section id="technical" aria-labelledby="technical-heading">
+    <div class="container">
+      <p class="section-label">Under the Hood</p>
+      <h2 class="section-title" id="technical-heading">Technical Breakdown</h2>
+      <p class="section-subtitle">
+        A look at the core systems powering Three Choices — each built to be
+        modular, extensible, and data-driven.
+      </p>
+
+      <div class="systems-grid">
+
+        <article class="system-card" aria-labelledby="sys-enemy">
+          <span class="system-icon" aria-hidden="true">🧩</span>
+          <h3 class="system-name" id="sys-enemy">Modular Enemy Definitions</h3>
+          <p class="system-description">
+            Each enemy is defined as a <strong>ScriptableObject</strong> asset containing stats,
+            skill sets, AI behaviour weights, and loot profiles. Adding a new enemy type
+            requires zero code — designers edit assets directly in the Unity Inspector.
+          </p>
+          <div class="system-detail">
+            <code>EnemyDefinitionSO</code>
+            <code>SkillSetSO</code>
+            <code>AIBehaviourSO</code>
+          </div>
+        </article>
+
+        <article class="system-card" aria-labelledby="sys-status">
+          <span class="system-icon" aria-hidden="true">💫</span>
+          <h3 class="system-name" id="sys-status">Status Effect System</h3>
+          <p class="system-description">
+            A layered effect stack applies buffs and debuffs at runtime.
+            Effects are stackable, time-limited or turn-limited, and communicate
+            through the combat event bus so the UI always reflects the current state
+            without direct coupling.
+          </p>
+          <div class="system-detail">
+            <code>StatusEffect</code>
+            <code>EffectStack</code>
+            <code>IEffectApplicable</code>
+          </div>
+        </article>
+
+        <article class="system-card" aria-labelledby="sys-loot">
+          <span class="system-icon" aria-hidden="true">🎲</span>
+          <h3 class="system-name" id="sys-loot">Weighted Loot Tables</h3>
+          <p class="system-description">
+            Drop chances are defined per-enemy as weighted probability tables.
+            Weights are normalised at runtime so designers can tweak values freely
+            without needing to ensure they sum to 100. Supports conditional modifiers
+            (e.g. luck stat, difficulty scaling).
+          </p>
+          <div class="system-detail">
+            <code>LootTableSO</code>
+            <code>WeightedEntry&lt;T&gt;</code>
+            <code>LootResolver</code>
+          </div>
+        </article>
+
+        <article class="system-card" aria-labelledby="sys-combat">
+          <span class="system-icon" aria-hidden="true">⚡</span>
+          <h3 class="system-name" id="sys-combat">Event-Driven Combat Pipeline</h3>
+          <p class="system-description">
+            All combat interactions flow through a central event bus.
+            Actions raise typed events (<em>OnDamageDealt</em>, <em>OnStatusApplied</em>, etc.)
+            that UI panels, the audio manager, and the replay recorder subscribe to
+            independently — keeping each system fully decoupled.
+          </p>
+          <div class="system-detail">
+            <code>CombatEventBus</code>
+            <code>ICombatListener</code>
+            <code>ActionResult</code>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Links Section -->
+  <section id="links" aria-labelledby="links-heading">
+    <div class="container">
+      <p class="section-label">Find the Project</p>
+      <h2 class="section-title" id="links-heading">Links</h2>
+      <p class="section-subtitle">Source code and playable build.</p>
+
+      <div class="links-grid">
+
+        <a href="https://github.com/edvinklaebo/three-choices"
+           class="link-card"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="View Three Choices source code on GitHub">
+          <span class="link-card-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+          </span>
+          <div class="link-card-text">
+            <h3>GitHub Repository</h3>
+            <p>Browse the source code for Three Choices</p>
+          </div>
+        </a>
+
+        <div class="link-card disabled"
+             aria-label="Playable build not yet available"
+             aria-disabled="true">
+          <span class="link-card-icon" aria-hidden="true">🎮</span>
+          <div class="link-card-text">
+            <h3>Playable Build</h3>
+            <p>Coming soon — demo build in progress</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <p>
+        Built by <a href="https://github.com/edvinklaebo" target="_blank" rel="noopener noreferrer">Edvin Klæbo</a>
+        &mdash; Unity / C# Gameplay Programmer
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>
