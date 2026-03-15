@@ -96,7 +96,7 @@
               and loot without touching game logic code.
             </p>
             <p style="color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem; margin-top: 0.75rem;">
-              Enemies are defined through scriptable object profiles, a layered status effect system
+              Enemies are defined through event-driven data definitions, a layered status effect system
               handles buffs and debuffs at runtime, and combat events flow through a decoupled pipeline
               that keeps the UI, audio, and game logic entirely independent.
             </p>
@@ -109,10 +109,9 @@
           <div class="info-card" style="margin-bottom: 1.25rem;">
             <p class="info-card-title">Engine &amp; Language</p>
             <div class="tech-tags">
-              <span class="tech-tag">Unity 2022 LTS</span>
+              <span class="tech-tag">Unity 6000.3.6f1</span>
               <span class="tech-tag">C#</span>
-              <span class="tech-tag">ScriptableObjects</span>
-              <span class="tech-tag">URP</span>
+              <span class="tech-tag">Unity Events</span>
             </div>
           </div>
 
@@ -175,12 +174,12 @@
           <figcaption class="visually-hidden">Combat system screenshot — coming soon</figcaption>
         </figure>
 
-        <figure class="gallery-item" role="listitem" aria-label="Enemy AI behaviour">
+        <figure class="gallery-item" role="listitem" aria-label="Enemy encounter">
           <div class="gallery-placeholder" aria-hidden="true">
-            <span class="gallery-placeholder-icon">🤖</span>
-            <span>Enemy AI</span>
+            <span class="gallery-placeholder-icon">👾</span>
+            <span>Enemy Encounter</span>
           </div>
-          <figcaption class="visually-hidden">Enemy AI screenshot — coming soon</figcaption>
+          <figcaption class="visually-hidden">Enemy encounter screenshot — coming soon</figcaption>
         </figure>
 
         <figure class="gallery-item" role="listitem" aria-label="Status effects UI">
@@ -227,14 +226,13 @@
           <span class="system-icon" aria-hidden="true">🧩</span>
           <h3 class="system-name" id="sys-enemy">Modular Enemy Definitions</h3>
           <p class="system-description">
-            Each enemy is defined as a <strong>ScriptableObject</strong> asset containing stats,
-            skill sets, AI behaviour weights, and loot profiles. Adding a new enemy type
+            Each enemy is defined as a data asset containing stats,
+            skill sets, and loot profiles. Adding a new enemy type
             requires zero code — designers edit assets directly in the Unity Inspector.
           </p>
           <div class="system-detail">
             <code>EnemyDefinitionSO</code>
             <code>SkillSetSO</code>
-            <code>AIBehaviourSO</code>
           </div>
         </article>
 
