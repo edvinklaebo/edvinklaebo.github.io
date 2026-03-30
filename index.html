@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Edvin Klæbo — Software Developer specialising in Unity, C#, ASP.NET, Vue.js, cloud, and databases. Portfolio showcasing Three Choices, an RPG / roguelike built in Unity." />
+  <meta name="description" content="Edvin Klæbo — Software Developer specialising in Unity, C#, ASP.NET, Vue.js, cloud, and databases. Portfolio showcasing Three Choices (RPG / roguelike in Unity) and a PoE Poison Simulator." />
   <title>Edvin Klæbo — Software Developer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -15,6 +15,7 @@
       <a href="#hero" class="nav-logo">Edvin Klæbo</a>
       <ul class="nav-links">
         <li><a href="#game-showcase">Game</a></li>
+        <li><a href="#poe-simulator">Simulator</a></li>
         <li><a href="#technical">Technical</a></li>
         <li><a href="#links">Links</a></li>
       </ul>
@@ -227,6 +228,117 @@
           </div>
         </article>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- PoE Poison Simulator Section -->
+  <section id="poe-simulator" aria-labelledby="poe-sim-title">
+    <div class="container">
+
+      <div class="game-header">
+        <div class="game-title-group">
+          <p class="section-label">Featured Project</p>
+          <h2 class="game-main-title" id="poe-sim-title">PoE Poison Simulator</h2>
+          <span class="game-status-badge badge-live">Live</span>
+        </div>
+      </div>
+
+      <div class="game-layout">
+
+        <!-- Main: Description + Feature Highlights -->
+        <div>
+          <div>
+            <p class="section-label">About the Tool</p>
+            <p style="color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem;">
+              <strong style="color: var(--text-primary);">PoE Poison Simulator</strong> is a
+              browser-based simulation tool that models Path of Exile's poison mechanics in
+              real time. Configure your character's damage, attack rate, poison chance,
+              duration, and scaling modifiers — the simulator tracks every active poison
+              stack tick-by-tick to project Poison DPS and time-to-kill against real boss
+              health pools.
+            </p>
+            <p style="color: var(--text-secondary); line-height: 1.75; font-size: 0.95rem; margin-top: 0.75rem;">
+              Built entirely in vanilla JavaScript with no dependencies, the tool faithfully
+              replicates PoE's stacking model: each hit applies at most one stack, stacks
+              are tracked individually with accurate expiry, and total DPS is bounded by
+              the engine's 32-bit integer cap at its 60 Hz tick rate. A dedicated
+              <em>Playtest</em> tab lets you experience the mechanics first-hand by moving
+              and attacking inside a live combat sandbox.
+            </p>
+          </div>
+
+          <!-- Feature highlights -->
+          <div class="sim-features-grid">
+            <div class="info-card">
+              <p class="info-card-title">Simulator Parameters</p>
+              <ul class="systems-list" aria-label="Simulator parameters">
+                <li>Hit damage &amp; attack rate</li>
+                <li>Poison chance &amp; duration</li>
+                <li>Damage over Time multiplier</li>
+                <li>Increased DoT &amp; duration modifiers</li>
+                <li>Deterministic proc mode</li>
+              </ul>
+            </div>
+            <div class="info-card">
+              <p class="info-card-title">Output &amp; Visualisation</p>
+              <ul class="systems-list" aria-label="Simulator outputs">
+                <li>Live Poison DPS readout</li>
+                <li>Active stack count chart</li>
+                <li>Time to Kill estimate</li>
+                <li>Boss HP presets (Shaper, Sirus, Maven…)</li>
+                <li>Canvas-based DPS graph</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside aria-label="Simulator details">
+
+          <div class="info-card" style="margin-bottom: 1.25rem;">
+            <p class="info-card-title">Language &amp; Stack</p>
+            <div class="tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">HTML5 Canvas</span>
+              <span class="tech-tag">CSS</span>
+              <span class="tech-tag">No dependencies</span>
+            </div>
+          </div>
+
+          <div class="info-card" style="margin-bottom: 1.25rem;">
+            <p class="info-card-title">Type</p>
+            <div class="tech-tags">
+              <span class="tech-tag">Simulation Tool</span>
+              <span class="tech-tag">Browser App</span>
+              <span class="tech-tag">Game Tooling</span>
+            </div>
+          </div>
+
+          <div class="info-card" style="margin-bottom: 1.25rem;">
+            <p class="info-card-title">Mechanics Modelled</p>
+            <ul class="systems-list" aria-label="Modelled PoE mechanics">
+              <li>Per-stack DPS tracking</li>
+              <li>Stack expiry &amp; refresh</li>
+              <li>32-bit integer DPS cap</li>
+              <li>Chaos resistance mitigation</li>
+              <li>Boss HP &amp; Time to Kill</li>
+            </ul>
+          </div>
+
+          <div class="game-links">
+            <a href="https://github.com/edvinklaebo/PoE-Poison-Simulator" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              Source Code
+            </a>
+            <a href="https://edvinklaebo.github.io/PoE-Poison-Simulator/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              <span aria-hidden="true">☠</span> Try Simulator
+            </a>
+          </div>
+
+        </aside>
       </div>
     </div>
   </section>
