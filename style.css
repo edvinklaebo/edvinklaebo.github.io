@@ -569,6 +569,33 @@ section {
   margin: 0.15rem 0.15rem 0.15rem 0;
 }
 
+/* === PoE Simulator Section === */
+#poe-simulator {
+  background-color: var(--bg-secondary);
+}
+
+.game-status-badge.badge-live {
+  color: var(--success);
+  border-color: rgba(76, 175, 130, 0.3);
+}
+
+.game-status-badge.badge-live::before {
+  background-color: var(--success);
+}
+
+.sim-features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .sim-features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* === Links Section === */
 #links {
   padding: 5rem 0;
