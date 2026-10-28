@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Edvin Klæbo — Software Developer specialising in Unity, C#, ASP.NET, Vue.js, cloud, and databases. Portfolio showcasing Three Choices (RPG / roguelike in Unity) and a PoE Poison Simulator." />
+  <meta name="description" content="Edvin Klæbo — Software Developer. Explore Three Choices, the PoE Poison Simulator, and a playable Temple of Fortune browser demo with virtual credits only." />
   <title>Edvin Klæbo — Software Developer</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="temple.css" />
+  <script src="temple-engine.js" defer></script>
+  <script src="temple.js" defer></script>
 </head>
 <body>
 
@@ -15,8 +18,8 @@
       <a href="#hero" class="nav-logo">Edvin Klæbo</a>
       <ul class="nav-links">
         <li><a href="#game-showcase">Game</a></li>
+        <li><a href="#temple-demo">Slot Demo</a></li>
         <li><a href="#poe-simulator">Simulator</a></li>
-        <li><a href="#technical">Technical</a></li>
         <li><a href="#links">Links</a></li>
       </ul>
     </div>
@@ -154,80 +157,74 @@
     </div>
   </section>
 
-  <!-- Technical Breakdown Section -->
-  <section id="technical" aria-labelledby="technical-heading">
+  <section id="temple-demo" aria-labelledby="temple-title">
     <div class="container">
-      <p class="section-label">Under the Hood</p>
-      <h2 class="section-title" id="technical-heading">Technical Breakdown</h2>
-      <p class="section-subtitle">
-        A look at the core systems powering Three Choices — each built to be
-        modular, extensible, and data-driven.
+      <p class="section-label">Playable Browser Demo</p>
+      <h2 class="section-title" id="temple-title">Temple of Fortune</h2>
+      <p class="section-subtitle temple-intro">
+        An ancient-temple slot game, reimagined for the browser from the Python / Pygame
+        project. Match connected relics, watch them cascade, and uncover free spins.
+        No download or account needed.
       </p>
+      <p class="temple-disclaimer">Play-only demo. Virtual credits have no monetary value.
+        No deposits, purchases, cash prizes, or withdrawals.</p>
 
-      <div class="systems-grid">
-
-        <article class="system-card" aria-labelledby="sys-enemy">
-          <span class="system-icon" aria-hidden="true">🧩</span>
-          <h3 class="system-name" id="sys-enemy">Modular Enemy Definitions</h3>
-          <p class="system-description">
-            Each enemy is defined as a data asset containing stats,
-            skill sets, and loot profiles. Adding a new enemy type
-            requires zero code — designers edit assets directly in the Unity Inspector.
-          </p>
-          <div class="system-detail">
-            <code>EnemyDefinitionSO</code>
-            <code>SkillSetSO</code>
+      <div class="temple-layout">
+        <div class="temple-machine" id="temple-machine">
+          <div class="temple-masthead">
+            <div><span class="temple-eyebrow">The lost sanctuary</span><h3>Temple of Fortune</h3></div>
+            <span class="temple-mode" id="temple-mode">Base game</span>
           </div>
-        </article>
-
-        <article class="system-card" aria-labelledby="sys-status">
-          <span class="system-icon" aria-hidden="true">💫</span>
-          <h3 class="system-name" id="sys-status">Status Effect System</h3>
-          <p class="system-description">
-            A layered effect stack applies buffs and debuffs at runtime.
-            Effects are stackable, time-limited or turn-limited, and communicate
-            through the combat event bus so the UI always reflects the current state
-            without direct coupling.
-          </p>
-          <div class="system-detail">
-            <code>StatusEffect</code>
-            <code>EffectStack</code>
-            <code>IEffectApplicable</code>
+          <div class="temple-stats">
+            <div><span>Virtual credits</span><strong id="temple-balance">1,000.00</strong></div>
+            <div><span>Spin win</span><strong id="temple-win">0.00</strong></div>
+            <div><span>Multiplier</span><strong id="temple-multiplier">x1</strong></div>
           </div>
-        </article>
-
-        <article class="system-card" aria-labelledby="sys-loot">
-          <span class="system-icon" aria-hidden="true">🎲</span>
-          <h3 class="system-name" id="sys-loot">Weighted Loot Tables</h3>
-          <p class="system-description">
-            Drop chances are defined per-enemy as weighted probability tables.
-            Weights are normalised at runtime so designers can tweak values freely
-            without needing to ensure they sum to 100. Supports conditional modifiers
-            (e.g. luck stat, difficulty scaling).
-          </p>
-          <div class="system-detail">
-            <code>LootTableSO</code>
-            <code>WeightedEntry&lt;T&gt;</code>
-            <code>LootResolver</code>
+          <div class="temple-board" id="temple-board" role="img" aria-label="Temple relic grid, 5 rows by 6 columns"></div>
+          <p class="temple-message" id="temple-message" role="status" aria-live="polite" aria-atomic="true">Ready to explore. Spin to reveal the relics.</p>
+          <div class="temple-controls">
+            <label for="temple-cost">Credits per spin
+              <input id="temple-cost" type="number" min="0.1" max="100" step="0.1" value="1" inputmode="decimal" aria-describedby="temple-cost-hint" />
+            </label>
+            <button type="button" class="btn temple-spin" id="temple-spin" disabled>Spin</button>
+            <button type="button" class="btn btn-secondary" id="temple-reset" disabled>Reset demo</button>
           </div>
-        </article>
-
-        <article class="system-card" aria-labelledby="sys-combat">
-          <span class="system-icon" aria-hidden="true">⚡</span>
-          <h3 class="system-name" id="sys-combat">Event-Driven Combat Pipeline</h3>
-          <p class="system-description">
-            All combat interactions flow through a central event bus.
-            Actions raise typed events (<em>OnDamageDealt</em>, <em>OnStatusApplied</em>, etc.)
-            that UI panels, the audio manager, and the replay recorder subscribe to
-            independently — keeping each system fully decoupled.
-          </p>
-          <div class="system-detail">
-            <code>CombatEventBus</code>
-            <code>ICombatListener</code>
-            <code>ActionResult</code>
+          <p class="temple-hint" id="temple-cost-hint">0.10-100 virtual credits. Free spins use the triggering spin's cost.</p>
+          <noscript><p class="temple-disclaimer">Enable JavaScript to play this demo. The rest of the portfolio is available without it.</p></noscript>
+        </div>
+        <aside class="temple-guide" aria-label="Temple of Fortune rules">
+          <div class="info-card">
+            <p class="info-card-title">How to play</p>
+            <ol>
+              <li>Choose a virtual-credit cost and press Spin.</li>
+              <li>5+ matching relics connected horizontally or vertically form a winning cluster.</li>
+              <li>Winning relics clear. New ones fall in, raising the cascade multiplier up to x5.</li>
+              <li>3+ scatters award 10 free spins, with a persistent multiplier up to x10.</li>
+            </ol>
           </div>
-        </article>
-
+          <details class="info-card temple-paytable">
+            <summary>Relics &amp; paytable</summary>
+            <p>Medium preset. Values multiply the spin cost and current cascade multiplier. Clusters of 12+ use the 12-symbol payout.</p>
+            <div class="temple-table-scroll"><table>
+              <caption>Cluster size and payout multiplier</caption>
+              <thead><tr><th scope="col">Relic</th><th scope="col">5</th><th scope="col">6</th><th scope="col">7</th><th scope="col">8</th><th scope="col">9</th><th scope="col">10</th><th scope="col">11</th><th scope="col">12+</th></tr></thead>
+              <tbody id="temple-paytable"></tbody>
+            </table></div>
+          </details>
+          <p class="temple-hint">Browser-native JavaScript adaptation, not the desktop build.
+            Progress stays in this tab only; reset restores 1,000 credits. Bonus retriggers add
+            10 spins, up to 50 awarded per bonus. Each free spin also has its own cascade
+            multiplier (x1-x10), multiplied by the persistent bonus multiplier, which increases
+            after each winning cascade. Scatters are counted on each spin's initial grid.</p>
+          <div class="game-links">
+            <a href="https://github.com/edvinklaebo/temple-of-fortune" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+              Source Code
+            </a>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
@@ -351,6 +348,25 @@
       <p class="section-subtitle">Source code and playable build.</p>
 
       <div class="links-grid">
+
+        <a href="#temple-demo" class="link-card">
+          <span class="link-card-icon" aria-hidden="true">&#9819;</span>
+          <div class="link-card-text">
+            <h3>Temple of Fortune</h3>
+            <p>Play the browser demo with virtual credits only</p>
+          </div>
+        </a>
+
+        <a href="https://github.com/edvinklaebo/temple-of-fortune"
+           class="link-card"
+           target="_blank"
+           rel="noopener noreferrer">
+          <span class="link-card-icon" aria-hidden="true">&lt;/&gt;</span>
+          <div class="link-card-text">
+            <h3>Temple of Fortune Source</h3>
+            <p>Browse the original Python / Pygame game on GitHub</p>
+          </div>
+        </a>
 
         <a href="https://github.com/edvinklaebo/three-choices"
            class="link-card"

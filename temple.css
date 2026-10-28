@@ -1,0 +1,61 @@
+#temple-demo { scroll-margin-top: 5rem; }
+.temple-intro { margin-bottom: 1.25rem; }
+.temple-disclaimer { padding: .8rem 1rem; margin-bottom: 1.5rem; border: 1px solid #73603c; border-radius: 6px; background: #282219; color: #e5c992; font-size: .85rem; }
+.temple-layout { display: grid; grid-template-columns: minmax(0, 1.8fr) minmax(0, 1fr); gap: 1.5rem; align-items: start; }
+.temple-machine { padding: 1.5rem; border: 1px solid #867043; border-radius: 14px; background: radial-gradient(ellipse at top, #3c3040, #181720 65%); box-shadow: 0 16px 48px #0005, inset 0 0 0 5px #c79c4910; min-width: 0; }
+.temple-masthead { display: flex; justify-content: space-between; align-items: center; gap: .75rem; margin-bottom: 1.25rem; }
+.temple-eyebrow { font-size: .65rem; letter-spacing: .18em; text-transform: uppercase; color: #c9ab72; }
+.temple-masthead h3 { font-family: Georgia, serif; font-size: clamp(1.2rem, 3vw, 1.8rem); color: #f4d997; }
+.temple-mode { padding: .3rem .6rem; border: 1px solid #877043; border-radius: 20px; font-size: .7rem; color: #f4d997; white-space: nowrap; }
+.temple-stats { display: grid; grid-template-columns: 1.4fr 1fr .8fr; gap: .5rem; margin-bottom: 1rem; }
+.temple-stats > div { background: #100e17a6; border: 1px solid #4e4050; border-radius: 6px; padding: .65rem; }
+.temple-stats span { display: block; font-size: .65rem; color: #bcb3c9; }
+.temple-stats strong { font-variant-numeric: tabular-nums; color: #f4d997; font-size: clamp(.85rem, 2.5vw, 1.2rem); overflow-wrap: anywhere; }
+.temple-board { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: .4rem; padding: .65rem; border: 2px solid #8a7147; border-radius: 8px; background: #0e0d15; }
+.temple-cell { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; flex-direction: column; border-radius: 6px; border: 1px solid #60506b; background: linear-gradient(145deg, #342c44, #201d2b); color: #d3b9f4; transition: background .2s, transform .2s; }
+.temple-glyph { font-size: clamp(1.15rem, 3.2vw, 2rem); line-height: 1.1; text-shadow: 0 2px 6px #0008; }
+.temple-symbol-name { font-size: .55rem; margin-top: .2rem; }
+.temple-cell[data-symbol="B"] { color: #8bc7ed; border-color: #375d7a; }
+.temple-cell[data-symbol="C"] { color: #7de4bb; border-color: #326b60; }
+.temple-cell[data-symbol="D"] { color: #faa398; border-color: #774a4d; }
+.temple-cell[data-symbol="E"], .temple-cell[data-symbol="SCATTER"] { color: #f6d379; border-color: #907134; }
+.temple-cell.is-winning { background: #72552b; border-color: #ffe4a0; transform: scale(.92); box-shadow: 0 0 12px #f4cf7870; }
+.temple-board.is-dropping .temple-cell { animation: temple-drop .28s ease-out both; }
+.temple-message { min-height: 4.5em; padding: 1rem 0 .5rem; color: #e0d0b1; font-size: .85rem; }
+.temple-controls { display: flex; align-items: end; gap: .65rem; flex-wrap: wrap; }
+.temple-controls label { display: flex; flex-direction: column; gap: .3rem; font-size: .75rem; color: #bcb3c9; flex: 1 1 110px; }
+.temple-controls input { width: 100%; padding: .65rem; background: #100e17; color: #f4e3bf; border: 1px solid #877043; border-radius: 6px; font: inherit; font-size: .9rem; }
+.temple-controls input, .temple-controls .btn { min-height: 44px; }
+.temple-spin { background: linear-gradient(135deg, #f3d390, #bc9146); color: #251b0b; min-width: 100px; justify-content: center; }
+.temple-controls .btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+.temple-controls :focus-visible, .temple-paytable summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.temple-hint { color: #aaa4b9; font-size: .75rem; margin-top: .85rem; }
+.temple-guide { display: grid; gap: 1rem; min-width: 0; }
+.temple-guide ol { padding-left: 1.2rem; font-size: .85rem; color: var(--text-secondary); }
+.temple-guide li + li { margin-top: .65rem; }
+.temple-paytable summary { cursor: pointer; color: #e5c992; font-weight: 600; font-size: .9rem; }
+.temple-paytable p { font-size: .75rem; color: var(--text-secondary); margin-top: .75rem; }
+.temple-table-scroll { overflow-x: auto; }
+.temple-paytable table { border-collapse: collapse; font-size: .7rem; width: 100%; margin-top: .75rem; }
+.temple-paytable caption { text-align: left; margin-bottom: .5rem; color: var(--text-secondary); }
+.temple-paytable th, .temple-paytable td { padding: .4rem; border-bottom: 1px solid var(--border); text-align: right; white-space: nowrap; }
+.temple-paytable th:first-child { text-align: left; }
+@keyframes temple-drop { from { opacity: .4; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 768px) {
+  .temple-layout { grid-template-columns: 1fr; }
+  .temple-machine { padding: 1rem; }
+  .temple-guide { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .temple-guide > .temple-hint { grid-column: 1 / -1; }
+}
+@media (max-width: 480px) {
+  .temple-machine { padding: .75rem; }
+  .temple-board { gap: .25rem; padding: .4rem; }
+  .temple-guide { grid-template-columns: 1fr; }
+  .temple-symbol-name { font-size: .48rem; }
+  .temple-controls .btn { padding: .65rem .85rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .temple-board.is-dropping .temple-cell { animation: none; }
+  .temple-cell { transition: none; }
+}
