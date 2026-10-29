@@ -687,6 +687,85 @@ footer a:hover {
   border: 0;
 }
 
+/* === Ninja Climb === */
+#ninja-climb,
+.ninja-page #browser-build {
+  background-color: var(--bg-secondary);
+}
+
+#ninja-climb,
+.ninja-page section {
+  scroll-margin-top: 6rem;
+}
+
+.ninja-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 300px);
+  gap: 2rem;
+  align-items: start;
+}
+
+.ninja-tags {
+  margin: 1.25rem 0;
+}
+
+.ninja-game-frame {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  background-color: var(--bg-primary);
+}
+
+.ninja-controls {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ninja-controls > div {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.5rem 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background-color: var(--bg-card);
+}
+
+.ninja-controls dt {
+  font-weight: 600;
+}
+
+.ninja-controls dd {
+  color: var(--text-secondary);
+}
+
+.ninja-page a:focus-visible,
+#ninja-climb a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 768px) {
+  .ninja-overview,
+  .ninja-controls > div {
+    grid-template-columns: 1fr;
+  }
+
+  .ninja-page .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .ninja-page nav .container {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
 /* === Responsive === */
 @media (max-width: 768px) {
   .nav-links {

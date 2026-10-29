@@ -1,6 +1,34 @@
 # edvinklaebo.github.io
 My profile
 
+## Ninja Climb showcase
+
+The homepage links to `ninja-climb.html`, the project details and controls page.
+Its responsive iframe and new-tab fallback both load
+`games/ninja-climb/index.html`. The complete GameMaker HTML5 export is included:
+the game runs locally with a static server and needs no build step. Inclusion
+in the worktree does not publish it; GitHub Pages serves the main branch.
+
+To update the browser version, export NINJA CLIMB from GameMaker for HTML5 and
+replace the contents of `games/ninja-climb/` with the **complete export**, including
+its generated scripts, assets, and subdirectories. Keep the exported entry point
+at `games/ninja-climb/index.html` (not inside another nested export directory).
+No iframe or fallback URL changes are needed. Do not upload the Windows `.win`
+build as a browser build. The generated entry HTML has two integration changes:
+a relative favicon link and responsive, centered 3:2 canvas styles with a dark
+background. Preserve or reapply these when replacing the export; the generated
+JavaScript and assets are otherwise unchanged.
+
+Serve the repository with a static server to check that the export loads both
+inside `ninja-climb.html` and directly, then check mouse/keyboard controls and
+focus behavior before publishing. Click inside the game to focus it; it pauses
+when unfocused. The exported build uses A/D or Left/Right to move and swing,
+mouse aim, left click or E to throw/detach, W/S to reel/extend, Space or right
+click to release, and R to restart. Throws require solid ground. A mouse and
+keyboard are required; there are no touch controls. The iframe preserves the
+game's 960-by-640 aspect ratio and grants fullscreen permission; the fallback
+opens the same build in its own tab.
+
 ## Temple of Fortune browser demo
 
 The portfolio includes a dependency-free JavaScript adaptation of the Python /

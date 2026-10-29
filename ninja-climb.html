@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Play NINJA CLIMB, a GameMaker game jam project about grappling toward the summit. Explore the project and learn the mouse and keyboard controls." />
+  <title>NINJA CLIMB — Game Jam Project</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="ninja-page">
+  <nav aria-label="Project navigation">
+    <div class="container">
+      <a href="index.html" class="nav-logo">Portfolio home</a>
+      <ul class="nav-links">
+        <li><a href="#browser-build">Browser version</a></li>
+        <li><a href="#controls">Controls</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section aria-labelledby="ninja-title">
+      <div class="container">
+        <div class="game-header">
+          <div class="game-title-group">
+            <p class="section-label">Game Jam Project</p>
+            <h1 class="game-main-title" id="ninja-title">NINJA CLIMB</h1>
+            <span class="game-status-badge badge-live">Browser game</span>
+          </div>
+        </div>
+        <div class="ninja-overview">
+          <div>
+            <h2 class="section-title">Aim. Attach. Climb.</h2>
+            <p class="game-description">
+              NINJA CLIMB is a 2D vertical grappling and climbing platformer built
+              in GameMaker. Aim with the mouse, throw your rope from solid ground,
+              and reel in or out to work your way toward the summit.
+              Swing, release, then land before throwing again.
+            </p>
+            <div class="game-links ninja-tags">
+              <a href="#browser-build" class="btn btn-primary">Play in your browser</a>
+              <a href="#controls" class="btn btn-secondary">Learn the controls</a>
+            </div>
+          </div>
+          <aside class="info-card" aria-label="Project details">
+            <h2 class="info-card-title">The project</h2>
+            <div class="tech-tags">
+              <span class="tech-tag">GameMaker</span>
+              <span class="tech-tag">2D Platformer</span>
+              <span class="tech-tag">Vertical Grappling</span>
+              <span class="tech-tag">Game Jam</span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="browser-build" aria-labelledby="browser-title">
+      <div class="container">
+        <p class="section-label">Browser Version</p>
+        <h2 class="section-title" id="browser-title">Take on the climb</h2>
+        <p class="section-subtitle" id="browser-status">
+          Click inside the game to focus it, then use your mouse and keyboard.
+          The game pauses when it loses focus.
+        </p>
+        <iframe
+          class="ninja-game-frame"
+          src="games/ninja-climb/index.html"
+          title="Play Ninja Climb — GameMaker HTML5 game"
+          aria-describedby="browser-status"
+          allow="fullscreen; autoplay"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+        <div class="game-links ninja-tags">
+          <a href="games/ninja-climb/index.html" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            Open game in new tab
+          </a>
+        </div>
+        <p class="game-description">
+          Open the game in a new tab for a larger view or if the embed does not work.
+          A mouse and keyboard are required; touch controls are not available.
+        </p>
+      </div>
+    </section>
+
+    <section id="controls" aria-labelledby="controls-title">
+      <div class="container">
+        <p class="section-label">How to Play</p>
+        <h2 class="section-title" id="controls-title">Control your climb</h2>
+        <dl class="ninja-controls">
+          <div><dt>Mouse</dt><dd>Aim the rope.</dd></div>
+          <div><dt>Left click or E</dt><dd>Throw the rope from solid ground, or detach it.</dd></div>
+          <div><dt>A / D or Left / Right arrows</dt><dd>Move left and right, or swing.</dd></div>
+          <div><dt>W / S</dt><dd>Reel the rope in and out.</dd></div>
+          <div><dt>Space or Right click</dt><dd>Release the rope.</dd></div>
+          <div><dt>R</dt><dd>Restart the climb.</dd></div>
+        </dl>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><a href="index.html#ninja-climb">Back to the portfolio</a></p>
+    </div>
+  </footer>
+</body>
+</html>
