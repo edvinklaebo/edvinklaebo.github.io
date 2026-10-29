@@ -317,18 +317,18 @@ section {
   align-items: start;
 }
 
-/* === Video Embed === */
-.video-wrapper {
+/* === Browser Game Embed === */
+.browser-game-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 56.25%;
+  height: 760px;
   background-color: var(--bg-primary);
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border);
 }
 
-.video-wrapper iframe {
+.browser-game-wrapper iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -778,6 +778,10 @@ footer a:hover {
 
   .game-layout {
     grid-template-columns: 1fr;
+  }
+
+  .browser-game-wrapper {
+    height: clamp(560px, 75vh, 760px);
   }
 
   .gallery-grid {

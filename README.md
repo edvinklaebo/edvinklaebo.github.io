@@ -29,6 +29,15 @@ keyboard are required; there are no touch controls. The iframe preserves the
 game's 960-by-640 aspect ratio and grants fullscreen permission; the fallback
 opens the same build in its own tab.
 
+## Three Choices browser game
+
+The featured Three Choices showcase embeds the standalone JavaScript adaptation
+at `https://edvinklaebo.github.io/Three-Choices/browser/` instead of a gameplay
+video. The game files and deployment are maintained in the Three-Choices
+repository; no game assets are copied here. Deploy that repository's browser
+build before publishing this embed. Existing source and Unity play links remain
+unchanged.
+
 ## Temple of Fortune browser demo
 
 The portfolio includes a dependency-free JavaScript adaptation of the Python /
